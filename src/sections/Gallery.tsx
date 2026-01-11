@@ -11,13 +11,13 @@ interface GalleryImage {
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [forceVisible, setForceVisible] = useState(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement | null>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1, margin: '-100px' })
 
   // Force visibility check when section comes into view or on mount
   useEffect(() => {
     const checkVisibility = () => {
-      if (ref.current) {
+      if (ref.current instanceof HTMLElement) {
         const rect = ref.current.getBoundingClientRect()
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0
         if (isVisible) {

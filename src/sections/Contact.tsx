@@ -269,8 +269,8 @@ const Contact = () => {
                 <a href="tel:+33783577238" className="hover:text-gold transition-colors block mb-2">
                   +33 7 83 57 72 38
                 </a>
-                <a href="mailto:gurungdava@gmail.com" className="hover:text-gold transition-colors">
-                  gurungdava@gmail.com
+                <a href="mailto:cheftashiphuri@gmail.com" className="hover:text-gold transition-colors">
+                  cheftashiphuri@gmail.com
                 </a>
               </p>
             </div>

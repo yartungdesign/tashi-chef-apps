@@ -29,17 +29,17 @@ NODE_ENV=development
 
 # Gmail Configuration
 EMAIL_SERVICE=gmail
-EMAIL_USER=gurungdava@gmail.com
+EMAIL_USER=cheftashiphuri@gmail.com
 EMAIL_PASS=your-16-character-app-password-here
 
 # Email Settings
-EMAIL_FROM=gurungdava@gmail.com
-CONTACT_EMAIL=gurungdava@gmail.com
+EMAIL_FROM=cheftashiphuri@gmail.com
+CONTACT_EMAIL=cheftashiphuri@gmail.com
 ```
 
 **Important:**
 - Replace `your-16-character-app-password-here` with the App Password you generated
-- Use your actual Gmail address: `gtashi076@gmail.com`
+- Use your actual Gmail address: `cheftashiphuri@gmail.com`
 - The `CONTACT_EMAIL` is where reservation requests will be sent
 
 ### Step 3: Test the Setup
@@ -72,7 +72,7 @@ For production, consider using Resend instead of Gmail:
 ```env
 RESEND_API_KEY=re_xxxxxxxxxxxxx
 EMAIL_FROM=noreply@yourdomain.com
-CONTACT_EMAIL=gurungdava@gmail.com
+CONTACT_EMAIL=cheftashiphuri@gmail.com
 ```
 
 ## Troubleshooting

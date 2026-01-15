@@ -101,16 +101,50 @@ const Gallery = () => {
                   loading="lazy"
                 />
 
-                {/* Overlay - Darker for better contrast */}
+                {/* Permanent Bottom Overlay for Text */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-8 pb-4 px-4">
+                  <p 
+                    className="text-gold font-heading text-lg md:text-xl mb-1 font-bold text-center"
+                    style={{
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.8)',
+                      WebkitTextStroke: '0.5px rgba(0,0,0,0.5)',
+                    }}
+                  >
+                    {image.title}
+                  </p>
+                  <p 
+                    className="text-text-primary text-xs md:text-sm uppercase tracking-wider font-medium text-center"
+                    style={{
+                      textShadow: '1px 1px 3px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.8)',
+                      WebkitTextStroke: '0.3px rgba(0,0,0,0.5)',
+                    }}
+                  >
+                    {image.category}
+                  </p>
+                </div>
+
+                {/* Overlay - Darker for better contrast on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Hover Info */}
+                {/* Hover Info - Enhanced version */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                  <div className="text-center px-4 py-6 bg-black/70 backdrop-blur-sm rounded-lg border border-gold/30 shadow-2xl">
-                    <p className="text-gold font-heading text-xl md:text-2xl mb-2 font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  <div className="text-center px-4 py-6 bg-black/80 backdrop-blur-sm rounded-lg border border-gold/40 shadow-2xl">
+                    <p 
+                      className="text-gold font-heading text-xl md:text-2xl mb-2 font-bold"
+                      style={{
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.5px rgba(0,0,0,0.5)',
+                      }}
+                    >
                       {image.title}
                     </p>
-                    <p className="text-text-primary text-sm md:text-base uppercase tracking-wider font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    <p 
+                      className="text-text-primary text-sm md:text-base uppercase tracking-wider font-medium"
+                      style={{
+                        textShadow: '1px 1px 3px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.3px rgba(0,0,0,0.5)',
+                      }}
+                    >
                       {image.category}
                     </p>
                   </div>

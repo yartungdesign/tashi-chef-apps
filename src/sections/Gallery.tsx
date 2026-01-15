@@ -101,28 +101,6 @@ const Gallery = () => {
                   loading="lazy"
                 />
 
-                {/* Permanent Bottom Overlay for Text */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-8 pb-4 px-4">
-                  <p 
-                    className="text-gold font-heading text-lg md:text-xl mb-1 font-bold text-center"
-                    style={{
-                      textShadow: '2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.8)',
-                      WebkitTextStroke: '0.5px rgba(0,0,0,0.5)',
-                    }}
-                  >
-                    {image.title}
-                  </p>
-                  <p 
-                    className="text-text-primary text-xs md:text-sm uppercase tracking-wider font-medium text-center"
-                    style={{
-                      textShadow: '1px 1px 3px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.8)',
-                      WebkitTextStroke: '0.3px rgba(0,0,0,0.5)',
-                    }}
-                  >
-                    {image.category}
-                  </p>
-                </div>
-
                 {/* Overlay - Darker for better contrast on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

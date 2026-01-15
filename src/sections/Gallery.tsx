@@ -6,6 +6,7 @@ interface GalleryImage {
   title: string
   category: string
   emoji: string
+  image: string
 }
 
 const Gallery = () => {
@@ -37,18 +38,18 @@ const Gallery = () => {
   }, [])
 
   const images: GalleryImage[] = [
-    { id: 1, title: 'Nigiri Mastery', category: 'Craftsmanship', emoji: '🍣' },
-    { id: 2, title: 'Knife Work', category: 'Technique', emoji: '🔪' },
-    { id: 3, title: 'Plating Art', category: 'Presentation', emoji: '🎨' },
-    { id: 4, title: 'Fish Selection', category: 'Ingredients', emoji: '🐟' },
-    { id: 5, title: 'Kitchen Details', category: 'Craftsmanship', emoji: '🏮' },
-    { id: 6, title: 'Omakase Counter', category: 'Experience', emoji: '🍱' },
-    { id: 7, title: 'Seasonal Preparation', category: 'Technique', emoji: '🌸' },
-    { id: 8, title: 'Traditional Tools', category: 'Craftsmanship', emoji: '⚒️' },
-    { id: 9, title: 'Final Presentation', category: 'Presentation', emoji: '✨' },
-    { id: 10, title: 'Ingredient Focus', category: 'Ingredients', emoji: '🥢' },
-    { id: 11, title: 'Chef at Work', category: 'Experience', emoji: '👨‍🍳' },
-    { id: 12, title: 'Detail Shot', category: 'Craftsmanship', emoji: '🔍' },
+    { id: 1, title: 'Nigiri Mastery', category: 'Craftsmanship', emoji: '🍣', image: '/Nigiri Mastery.JPG' },
+    { id: 2, title: 'Knife Work', category: 'Technique', emoji: '🔪', image: '/Knife Work.JPG' },
+    { id: 3, title: 'Plating Art', category: 'Presentation', emoji: '🎨', image: '/Plating Art.JPG' },
+    { id: 4, title: 'Fish Selection', category: 'Ingredients', emoji: '🐟', image: '/Fish Selection.jpg' },
+    { id: 5, title: 'Kitchen Details', category: 'Craftsmanship', emoji: '🏮', image: '/Kitchen Details.JPG' },
+    { id: 6, title: 'Omakase Counter', category: 'Experience', emoji: '🍱', image: '/Omakase Counter.JPG' },
+    { id: 7, title: 'Seasonal Preparation', category: 'Technique', emoji: '🌸', image: '/Seasonal Preparation.JPG' },
+    { id: 8, title: 'Traditional Tools', category: 'Craftsmanship', emoji: '⚒️', image: '/Traditional Tools.JPG' },
+    { id: 9, title: 'Final Presentation', category: 'Presentation', emoji: '✨', image: '/Final Presentation.JPG' },
+    { id: 10, title: 'Ingredient Focus', category: 'Ingredients', emoji: '🥢', image: '/Ingrediant Focus.JPG' },
+    { id: 11, title: 'Chef at Work', category: 'Experience', emoji: '👨‍🍳', image: '/Chef at Work.JPG' },
+    { id: 12, title: 'Detail Shot', category: 'Craftsmanship', emoji: '🔍', image: '/Detail Shot.JPG' },
   ]
 
   // Create masonry-like heights
@@ -92,18 +93,13 @@ const Gallery = () => {
                 className="relative bg-wood/30 backdrop-blur-sm border border-accent-red/20 rounded-lg overflow-hidden hover:border-accent-red/40 transition-all duration-500 w-full"
                 style={{ height: `${getHeight(index)}px`, minHeight: '250px' }}
               >
-                {/* Placeholder Image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-wood via-wood-light to-background flex flex-col items-center justify-center">
-                  <motion.div
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    className="text-8xl mb-4"
-                  >
-                    {image.emoji}
-                  </motion.div>
-                  <p className="text-text-primary font-heading text-lg mb-1">{image.title}</p>
-                  <p className="text-text-secondary text-sm">{image.category}</p>
-                </div>
+                {/* Actual Image */}
+                <img
+                  src={image.image}
+                  alt={image.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.5)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -144,12 +140,14 @@ const Gallery = () => {
                 const image = images.find((img) => img.id === selectedImage)
                 return (
                   <div className="bg-wood/50 backdrop-blur-sm border border-accent-red/40 rounded-lg overflow-hidden">
-                    <div className="aspect-video bg-gradient-to-br from-wood via-wood-light to-background flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-9xl mb-6">{image?.emoji}</div>
-                        <h3 className="text-3xl font-heading text-gold mb-2">{image?.title}</h3>
-                        <p className="text-text-secondary">{image?.category}</p>
-                      </div>
+                    <img
+                      src={image?.image}
+                      alt={image?.title}
+                      className="w-full h-auto max-h-[80vh] object-contain"
+                    />
+                    <div className="p-6 text-center">
+                      <h3 className="text-3xl font-heading text-gold mb-2">{image?.title}</h3>
+                      <p className="text-text-secondary uppercase tracking-wider">{image?.category}</p>
                     </div>
                   </div>
                 )

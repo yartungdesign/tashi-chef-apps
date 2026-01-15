@@ -101,14 +101,16 @@ const Gallery = () => {
                   loading="lazy"
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.5)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Overlay - Darker for better contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Hover Info */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="text-center">
-                    <p className="text-gold font-heading text-xl mb-2">{image.title}</p>
-                    <p className="text-text-secondary text-sm uppercase tracking-wider">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                  <div className="text-center px-4 py-6 bg-black/70 backdrop-blur-sm rounded-lg border border-gold/30 shadow-2xl">
+                    <p className="text-gold font-heading text-xl md:text-2xl mb-2 font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {image.title}
+                    </p>
+                    <p className="text-text-primary text-sm md:text-base uppercase tracking-wider font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                       {image.category}
                     </p>
                   </div>
@@ -145,9 +147,13 @@ const Gallery = () => {
                       alt={image?.title}
                       className="w-full h-auto max-h-[80vh] object-contain"
                     />
-                    <div className="p-6 text-center">
-                      <h3 className="text-3xl font-heading text-gold mb-2">{image?.title}</h3>
-                      <p className="text-text-secondary uppercase tracking-wider">{image?.category}</p>
+                    <div className="p-6 text-center bg-black/80 backdrop-blur-sm border-t border-gold/30">
+                      <h3 className="text-3xl font-heading text-gold mb-2 font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                        {image?.title}
+                      </h3>
+                      <p className="text-text-primary uppercase tracking-wider font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                        {image?.category}
+                      </p>
                     </div>
                   </div>
                 )
